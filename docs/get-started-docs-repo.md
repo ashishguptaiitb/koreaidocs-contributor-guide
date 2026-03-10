@@ -1,6 +1,7 @@
 ---
 title: Docs Repo — Team Guidelines and Workflow
 description: Standards, workflow steps, and conventions for contributing to the consolidated docs-v2 repository using Mintlify.
+sidebar_label: New Repo Guidelines
 ---
 
 This document is the team's reference guide for the `docs-v2` repository. It covers onboarding, daily workflow, content standards, and QC processes.

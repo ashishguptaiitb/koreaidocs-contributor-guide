@@ -1,6 +1,7 @@
 ---
 title: Sync new and old repos after the latest release
 description: Step-by-step task list to manually port the recent doc updates and release content from the old docs repo to the new repo.
+sidebar_label: Sync latest content across repos
 ---
 
 # Porting Documentation Updates from Old Repo
@@ -12,8 +13,8 @@ Use the following steps to manually port the recently updated content from the o
    - Look for the local folder `latest-doc-updates-from-old-repos`.
 
 1. **Identify Files Relevant to Your Product Area**
-   - In the folder `latest-doc-updates-from-old-repos`, start with the `.md` files of your product area only.
-   - You won't find the `.yml` and `.txt` files, as those are redundant in the new repo.
+   - In the folder `latest-doc-updates-from-old-repos`, start with the .md files of your product area only.
+   - You won't find the .yml and .txt files, as those are redundant in the new repo.
 
 1. **Review Each Updated File Before Editing**
    - Review the .md file from old repo and identify the exact content updates that you made.
@@ -39,7 +40,7 @@ Use the following steps to manually port the recently updated content from the o
    - Look for opportunities to backlink to this net-new content from other related high-level files.
 
 9. **How to Handle Graphics**
-   - Check `.png` images that were added in the old repo.
+   - Check .png images that were added in the old repo.
    - Determine if the screenshot is still required in the new docs. Again, adhere to the new style of writing + the usage guidelines for screenshots that I shared in our team's group chat.
    - Add the image in an existing `images` folder that's 'nearest to the .mdx file' in the folder hierarchy.
    - Be mindful to add root-relative path for images, as I demoed in our onboarding meetings.
