@@ -1,2 +1,2 @@
-# koreaidocs-contributor-guide
-How to Contribute to Kore.ai Technical Documentation
+# Contribute to Technical Documentation of Kore.ai Platform
+
