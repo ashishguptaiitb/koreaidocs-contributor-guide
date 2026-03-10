@@ -1,0 +1,82 @@
+// @ts-check
+
+const config = {
+  // Site Metadata
+  title: 'My Project Site',
+  tagline: 'Dinosaurs are cool',
+  favicon: 'img/favicon.ico',
+
+  // Deployment Config
+  url: 'https://my-org.github.io', // The URL for your website
+  baseUrl: '/my-project/', // The base URL for your project with a trailing slash
+  projectName: 'my-project', // The name of your GitHub repository
+  organizationName: 'my-org', // The GitHub user or organization name
+  deploymentBranch: 'gh-pages', // The branch to deploy to (defaults to gh-pages)
+  trailingSlash: false, // Recommended to set explicitly for consistent behavior across hosts
+
+  // ... other configurations like header, footer, themes, plugins, etc.
+
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com',
+        },
+        blog: {
+          showReadingTime: true,
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com',
+        },
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      }),
+    ],
+  ],
+
+  themeConfig:
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    ({
+      // Replace with your project's social card
+      image: 'img/docusaurus-social-card.jpg',
+      navbar: {
+        title: 'My Project Site',
+        logo: {
+          alt: 'My Project Logo',
+          src: 'img/logo.svg',
+        },
+        items: [
+          {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Tutorial',
+          },
+          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            href: 'https://github.com',
+            label: 'GitHub',
+            position: 'right',
+          },
+        ],
+      },
+      footer: {
+        style: 'dark',
+        links: [
+          // ... your footer links
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      },
+      // ... other theme options
+    }),
+};
+
+module.exports = config;
