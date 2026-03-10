@@ -6,8 +6,6 @@ sidebar_label: New Repo Guidelines
 
 This document is the team's reference guide for the `docs-v2` repository. It covers onboarding, daily workflow, content standards, and QC processes.
 
----
-
 ## Prerequisites
 
 Before you start contributing:
