@@ -19,6 +19,8 @@ const config = {
   url: 'https://ashishguptaiitb.github.io',
   baseUrl: '/koreaidocs-contributor-guide/',
 
+  trailingSlash: true,
+  
   // GitHub pages deployment config.
   organizationName: 'ashishguptaiitb',
   projectName: 'koreaidocs-contributor-guide',
