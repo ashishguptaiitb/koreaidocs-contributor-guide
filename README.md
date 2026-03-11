@@ -1,6 +1,6 @@
 # Contribute to Technical Documentation of Kore.ai Platform
 
-Welcome to the Contributor guide that helps you author, edit, publish, and contribute to the product documentation of Kore.ai Platform and Solutions.
+Welcome to the Contributor guide that helps you create, edit, publish, and contribute to the product documentation of Kore.ai Platform and Solutions.
 
 It is published on github.io at [https://ashishguptaiitb.github.io/koreaidocs-contributor-guide/docs/introduction/](https://ashishguptaiitb.github.io/koreaidocs-contributor-guide/docs/introduction/).
 
