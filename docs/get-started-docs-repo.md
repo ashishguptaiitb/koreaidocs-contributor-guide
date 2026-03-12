@@ -1,103 +1,124 @@
 ---
-title: Docs Repo — Team Guidelines and Workflow
+title: Docs Repo v2 — Team Guidelines and Workflow
 description: Standards, workflow steps, and conventions for contributing to the consolidated docs-v2 repository using Mintlify.
 sidebar_label: New Repo Guidelines
 ---
 
-This document is the team's reference guide for the `docs-v2` repository. It covers onboarding, daily workflow, content standards, and QC processes.
+This document is the team's reference guide for the `docs-v2` repository (https://github.com/Koredotcom/docs-v2/). We cover onboarding, daily workflow, content standards, and QC processes in the following sections.
+
+<br />
+<br />
+<br />
 
 **THIS DOC IS A WORK IN PROGRESS**
 
+<br />
+<br />
+<br />
+
 ## Prerequisites
 
-Before you start contributing:
+Before you can contribute to the new docs repo, ensure the following:
 
-- Accept your GitHub repository invite via the email notification. Cloning our public repo is possible without accepting the invite, but push access and pull request (PR) creation require explicit acceptance.
-- Complete GitHub 2FA setup.
-- Verify both steps are complete independently — don't assume they're done because one step is complete.
-- Install the required VSCode extensions shared in the internal team's group chat.
-- Check that local build is working by running `mint dev` command in the terminal. If the command is not recognized, contact IT to update system's environment variables.
+- Join the repo as a collaborator. Check invite in your Inbox. 
+- Complete GitHub 2FA setup. Join Kore.ai's GitHub org if you aren't a part of it.
+- Clone the repo locally. Install the recommended VSCode extensions.
+- Install Mintlify CLI on your laptop. Check team chat [here](https://chat.google.com/room/AAQAYijP1fQ/F5LqDNvDg3k/F5LqDNvDg3k?cls=10).
+- Make sure that the local build is working. Run `mint dev` command in the repo folder.
 
-## Repository Architecture
+## Repo Architecture and Setup
 
-The team uses a single consolidated repository instead of separate repositories per product.
+We're now using a single repo containing content of all products, instead of separate forks for each product.
 
 - The `main` branch always represents the production-ready state. Never commit directly to `main` and don't merge PRs.
-- Each product has a dedicated dev branch named after the product (for example, `ai-for-service-dev`, `agent-platform-dev`). All authoring happens on the product dev branch.
-- Writers work only within their product folder. Don't edit root-level configuration files unless explicitly required.
+- Each product has a dedicated dev branch named, for example, `ai-for-service-dev` and `agent-platform-dev`. Author new content in a product's dev branch.
+- Config files at repo root are explained in [the repo's readme file](https://github.com/Koredotcom/docs-v2/blob/main/README.md).
 - Details of each folder and asset in the repo is documented in the [new repo's readme file](https://github.com/Koredotcom/docs-v2/blob/main/README.md).
+- Alongside `main`, all product branches are protected.
 
-## Daily Workflow
+### VSCode Setup
 
-### Making content updates
+:::note
 
-1. Open the repository in VSCode via GitHub Desktop. Always launch VSCode from GitHub Desktop using the correct product dev branch — see [VSCode Setup](#vs-code-setup).
-2. Verify you are on the correct product dev branch before editing any files.
-3. Make your edits and commit to the product dev branch.
+Don't open a folder in VSCode editor manually. Always open VSCode editor from GitHub Desktop client after selecting the appropriate product branch. It is required for root-relative paths to work.
 
-### Stage content and preview via pull requests
+:::
 
-A staging preview link is generated only when a pull request (PR) is open.
+Verify that the top of the VSCode Explorer panel should show the repository root name (`docs-v2`). If it shows any other folder name, the repo is not open from its root and root-relative paths will fail.
 
-- The staging URL is static and based on the branch name. Bookmark it.
-- When no PR is open, the staging link returns 404. This is expected.
-- Access the staging link via: GitHub → the PR → **Show environments**.
-- A reviewer must approve the PR before it can be merged.
-- The PR shows all commits from all contributors since the last merge. Any team member can create the PR.
+| Recommended extensions                                                                                          | Description                                                                                                                                                                                                                                                          |
+|:----------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Copy Relative Path Posix](https://marketplace.visualstudio.com/items?itemName=rssowl.copy-relative-path-posix) | Provides Unix-style (forward-slash) relative paths when you right-click a file tab. The native VSCode "Copy Relative Path" uses backslashes, which break on all platforms.                                                                                           |
+| [Mintlify MDX](https://marketplace.visualstudio.com/items?itemName=mintlify.mintlify-snippets)                  | Makes it easy to insert Mintlify-specific foramtting and syntax in the content.                                                                                                                                                                                      |
+| [MDX preview](https://marketplace.visualstudio.com/items?itemName=xyc.vscode-mdx-preview)                       | In-editor preview of MDX files. Mintlify-specific components (`<Note>`, `<Warning>`) will show errors in this preview — this is expected and harmless. Use local build or staging for full rendering. Doesn't work with Mintlify-specific formatting in the article. |
+| [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)              | MD linting and style checking based on CommonMark specs.                                                                                                                                                                                                             |
+| [JSON lint](https://marketplace.visualstudio.com/items?itemName=rioj7.vscode-json-validate)                     |                                                                                                                                                                                                                                                                      |
+| [Prettifier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)                        |                                                                                                                                                                                                                                                                      |
+| [MD Enhanced Preview](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)  |                                                                                                                                                                                                                                                                      |
 
-## VSCode Setup
+### File Naming Conventions
 
-### Opening the repository
+Applies to help article files, folders, image names, and more.
 
-Always open VSCode from GitHub Desktop by selecting the correct branch and clicking **Open in Visual Studio Code**. This ensures VSCode sees the full repository from its root, which is required for root-relative paths to work.
-
-Verify this: the top of the VSCode Explorer panel should show the repository root name (`docs-v2`). If it shows any other folder name, the repo is not open from its root and root-relative paths will fail.
-
-### Required extensions
-
-| Extension | Purpose |
-|---|---|
-| **Copy Relative Path Posix** | Provides Unix-style (forward-slash) relative paths when you right-click a file tab. The native VSCode "Copy Relative Path" uses backslashes, which break on all platforms. |
-| **MDX Preview** | In-editor preview of MDX files. Mintlify-specific components (`<Note>`, `<Warning>`) will show errors in this preview — this is expected and harmless. Use local build or staging for full rendering. |
-| **Markdown Lint** | Flags Markdown style issues. |
-
-### Local build
-
-Run `mint dev` in the terminal to preview the site locally with full Mintlify rendering.
-
----
-
-## File Naming Conventions
-
+- No capital letter. No spaces. No underscores. No parenthesis. No other characters.
 - All new and revamped articles use the `.mdx` extension.
-- Legacy `.md` files represent old, unconsolidated content being phased out.
-- The extension is the team's internal content status signal: `.mdx` = reviewed, new-structure content; `.md` = legacy, to be retired or migrated.
-- Both extensions use standard Markdown syntax — there is no functional difference in the build engine.
-- **Action required:** MDX articles that link to `.md` files will break as soon as the MD files are deleted. Search within `*.mdx` files for links ending in `.md)` and fix them first — these are the highest-priority broken links.
+- All screenshots are in .png format.
+- A few illustrations can be in .svg and Mermaid format. Mermaid code is inserted in the .mdx file and not externalized.
 
----
+### Know the Content Hierarchy
 
-## Content Hierarchy
+The documentation has a logical, three-tier structure. It physically manifests in some places in the published docs, but it really is a logical understanding of how we treat our articles.
 
-The documentation uses a three-tier structure.
-
-| Level | Description | Appears in left nav? |
-|---|---|---|
-| **L1** | High-level product overviews and major feature categories. Few per product. | Yes |
-| **L2** | Detailed feature topics. Some appear as children of L1 entries in the nav; others are in the folder but not in the nav. They link to L3 articles via tables and accordions. | Some |
-| **L3** | Detailed procedures, integration pages, connector pages, and API references. Discoverable only through links from L1/L2 articles or site search. | No |
+| Level  | Description                                                                                                                                      | Appears in left nav?                       |
+|--------|--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| **L1** | High-level product overviews and major feature categories. A few such articles per product. Don't change over time.                              | Yes. Single-click access.                  |
+| **L2** | Detailed feature topics. Some appear under L1 entries in the left nav.                                                                           | Yes. Nested under TOC categories.          |
+| **L3** | Deep-dive how-to articles or references such as API ref, integration pages, Search AI connectors. Discoverable via inline links and site search. | No. Linked inline from L1 and L2 articles. |
 
 This structure intentionally reduces the number of left-nav entries. What were previously five to six separate articles for a single feature are now consolidated into one or two L2 articles with clear sections and anchored headings.
 
-If content is logically difficult to find, that is a sequencing problem to fix during QC — not a reason to add more top-level nav entries.
+:::tip
 
----
+If content is logically difficult to locate then is a sequencing/structuring and a discoverability is the issue worth fixing. It's not a reason to add more top-level navigation entries.
 
-## Linking and Image Paths
+:::
+
+## Update Docs
+
+1. Select the appropriate product branch in GitHub Desktop client.
+1. Open the repository in VSCode editor.
+1. Follow standard Markdown syntax and [Mintlify's syntax](https://www.mintlify.com/docs).
+1. Preview edits in a local build. 
+1. Commit to your product branch. Optionally, create a PR if it doesn't exist.
+
+### Preview on Stage
+
+If PR exists or if you create it, then you can preview your updates on the staging link as well. Staging link is available in [the PR here](https://github.com/Koredotcom/docs-v2/pulls).
+
+:::note
+
+When a PR is merged and closed, the staging link doesn't work.
+
+:::
+
+- The staging URL is static and based on the branch name. Bookmark the relevant links from the below list:
+
+  - AI for Service: https://koreai-ai-for-service-dev.mintlify.app/home
+  - Agent Platform: https://koreai-agent-platform-dev.mintlify.app/home
+  - AI for Work: https://koreai-ai-for-work-dev.mintlify.app/home
+  - AI for Process: https://koreai-ai-for-process-dev.mintlify.app/home
+  - Agent Management Platform: https://koreai-agent-management-platform-dev.mintlify.app/home
+
+- Access the staging link via: GitHub → the PR → **Show environments**.
+- A reviewer must approve the PR before it can be merged to `main`.
+
+### Creating a link
+
+:::note
 
 All hyperlinks and image references use root-relative paths (starting with `/` from the repository root).
 
-### Creating a link
+:::
 
 1. In VSCode, right-click the destination file's **tab** (not the sidebar — the tab at the top of the editor).
 2. Select **Copy Relative Path Posix**.
@@ -119,13 +140,13 @@ After the file path, add `#` followed by the heading anchor (heading text in low
 
 The live URL for any file is `docs.kore.ai` + the file path without the `.mdx` extension. Use this to reconstruct a file's location from its URL, or vice versa.
 
----
+## Mintlify-specific Syntax
 
-## Mintlify Syntax and Formatting
+:::warning
 
-### No HTML
+**Don't** use HTML in articles going forward. Remove or replace all HTML with Markdown syntax or native Mintlify components.
 
-This is an absolute rule. The old repository used custom HTML for image sizing, numbered lists, and note formatting. Mintlify does not support custom HTML. Remove or replace all HTML with native Mintlify components.
+:::
 
 ### Admonitions
 
@@ -137,34 +158,32 @@ Use Mintlify's tag syntax:
 <Info>Contextual information here.</Info>
 ```
 
-Keep admonitions short. If the content is long enough to need a multi-line admonition, move it into the article body instead.
+Keep admonitions short. If the content is long enough to need a multi-line admonition, move it into the article body instead. No nested lists, no images, no code snippets, no list of tips and tricks, etc. inside admonitions please.
 
 ### Frontmatter
 
-Every MDX file must begin with YAML frontmatter:
+Every article begins with YAML frontmatter. Minimum requirement is to have a `title` entry. L1 and L2 articles must also contain `sidebarTitle`. For L3 articles that aren't part of the left nav, `sidebarTitle` isn't needed.
 
 ```yaml
 ---
-title: Article Title Here
-sidebarTitle: Title that shows in the TOC or left nav
-Description: meta description from SERP snippet point of view.
+title: Article Title Here. It becomes H1 in the published article.
+sidebarTitle: Left nav entry
+Description: meta description from SERP point of view.
 ---
 ```
-
-Add a `sidebarTitle` field only when the left-nav label should differ from the H1 heading. For most L3 articles (not in the left nav), `sidebarTitle` is not needed.
 
 ### Other formatting rules
 
 - **Tables:** Use Markdown table syntax. No HTML tables.
 - **Accordions:** Use Mintlify accordion syntax (see [Mintlify docs](https://mintlify.com/docs)) to reduce scroll length on long articles.
-- **Badges:** Use for back-navigation on L3 articles. Copy the badge syntax from an existing L3 article (for example, the Azure connector MDX file) and update the link destination.
+- **Badges:** Use at the top of some L3 articles, to let users go back to the main article. For example, Search AI connectors, Agent AI integrations, and Agent Platform APIs. Copy the badge syntax from an existing L3 article and update the link destination. Don't use fancy colors to maintain consistency.
 
-## Writing Style
+## Writing and Formatting Style
 
 - **Action-oriented and direct.** Use action verbs, short sentences, active voice.
-- **No marketing language.** No adjectives or adverbs in body content. No promotional framing.
-- **Minimal images.** Remove screenshots that do not add meaningful information. Images that are kept should be captured at a resolution that is meaningful at full page width.
-- **ASCII diagrams** (in code blocks) replace many illustrations.
+- **No marketing language.** No adjectives or adverbs in body content. No promotional framing or marketing mumo-jumbo.
+- **Minimal images.** Remove screenshots that don't add meaningful information. Capture screenshots at a resolution that is meaningful at full page width.
+- **ASCII diagrams** replace many illustrations. Must be embedded in div tags.
 - **Lists and tables frequently,** but avoid back-to-back multiple lists or tables.
 - **Few admonitions,** used only when genuinely necessary.
 
