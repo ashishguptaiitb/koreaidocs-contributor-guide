@@ -34,6 +34,7 @@ const sidebars = {
         'vale-command-line'
       ],
     },
+    'cspell-spell-checker'
   ],
 };
 
