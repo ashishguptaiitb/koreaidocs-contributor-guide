@@ -4,8 +4,6 @@ description: Instructions to enable Vale linter in VSCode and troubleshooting ti
 sidebar_label: Vale in VSCode
 ---
 
-# 
-
 You must complete the following prerequisites before you begin to install Vale:
 
 | Task | Reason |
