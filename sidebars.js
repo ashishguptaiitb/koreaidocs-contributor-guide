@@ -26,6 +26,14 @@ const sidebars = {
         'migrate-recently-updated-content-to-new-repo-2026'
       ],
     },
+    {
+      type: 'category',
+      label: 'Vale',
+      items: [
+        'configure-vale-in-vscode',
+        'vale-command-line'
+      ],
+    },
   ],
 };
 
