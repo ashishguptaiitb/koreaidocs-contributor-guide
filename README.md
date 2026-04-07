@@ -4,9 +4,9 @@ Welcome to the Contributor guide that helps you create, edit, publish, and contr
 
 It is published on github.io at [https://ashishguptaiitb.github.io/koreaidocs-contributor-guide/docs/introduction/](https://ashishguptaiitb.github.io/koreaidocs-contributor-guide/docs/introduction/).
 
-## Publish docs
+## Publish this contributor guide
 
-This static website is built using [Docusaurus](https://docusaurus.io/).
+This guide is a static website, built using [Docusaurus](https://docusaurus.io/).
 
 To create a local build, follow these steps:
 
@@ -15,4 +15,4 @@ To create a local build, follow these steps:
 * Preview built site- `npm run serve`
 * Clear cached build artifacts - `npm run clear`
 
-To publish content on github.io web pages, just add or update content and merge it to the `main` branch.
+To publish content and update the published web site, just merge the updated content into the `main` branch.
