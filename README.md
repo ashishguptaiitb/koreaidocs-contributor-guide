@@ -16,3 +16,10 @@ To create a local build, follow these steps:
 * Clear cached build artifacts - `npm run clear`
 
 To publish content and update the published web site, just merge the updated content into the `main` branch.
+
+## Kore.ai Products and AI Platforms
+
+- **[Agent Platform](https://koreai.mintlify.app/agent-platform/index)** — Build intelligent, autonomous AI agents.
+- **[AI for Work](https://koreai.mintlify.app/ai-for-work/index)** — Enterprise productivity platform.
+- **[AI for Service](https://koreai.mintlify.app/ai-for-service/index)** — Customer service AI solutions.
+- **[AI for Process](https://koreai.mintlify.app/ai-for-process/index)** — Process automation with AI.
