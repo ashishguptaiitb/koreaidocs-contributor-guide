@@ -38,17 +38,18 @@ Just copy the `.cspell.json` file that you create [here](#configure-cspell-to-wo
 
 In our cspell output, note the following:
 
-- Some typos need an update in the docs. For example, misspelt words or use of British English.
+- Some typos need an update in the docs.
+
+  - Misspelt words or use of British English and Latin phrases.
+  - The report also contains some `forbidden` words that we don't want to use in docs. For example, `will` is future tense, `currently` is time-sensitive, words used colloquially, and more. Treat these as typos and rewrite the sentence to not use these words.
 
 - Ignore some issues. Two examples are:
 
   - When we mask a URL using `xxx`, then let it be. No update required.
   - Some valid words in Kore docs that must remain as is. I add such words to our custom dictionary, so that CSpell doesn't flag these words the next time.
 
-- The report also contains some `forbidden` words that we don't want to use in docs. For example, future tense will, time-sensitive writing currently, colloquial usage, and more. Treat these as typos and rewrite the sentence to not use these words.
-
 :::info
-To get new words added to our custom dictionary, share the .mdx file's URL with me.
+To get new words added to our custom dictionary, share the words and the corresponding help article URL with me.
 :::
 
 ## Use via command line for bulk checks
@@ -62,9 +63,9 @@ Editors, repo owners, or manager can use the same via CLI to check repo health. 
 | Recursively check MD files in the current folder | `npx cspell --config <path to .cspell.json> "**/*.md"` |   |
 | Recursively check MD files in the current folder and save the output in a local file | `npx cspell --config <path to .cspell.json> "**/*.md" > <path of a local file>` |  |
 
-## Use 
+<!-- 
+AG: Check how to embed GDrive video in Docusaurus page. Potential approach can be 
 
-<!-- AG: Check how to embed GDrive video in Docusaurus page. Potential approach can be 
 * to get iframe embed code from GDrive.
 * use .mdx file.
 * use iframe with HTML5 syntax.
