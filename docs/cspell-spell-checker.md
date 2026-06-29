@@ -14,7 +14,9 @@ We've added 1200+ words to our custom dictionaries to avoid false positives. You
 
 1. Install [streetsidesoftware.code-spell-checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) VSCode extension.
 
-1. Configure CSpell as described in [this internal video](https://drive.google.com/file/d/1kohoQskuHhwFykV5ZyUz-cPdLFeCcRD_/view). It'll let CPsell extension use the custom dictionaries.
+1. Configure CSpell as described in [this internal video](https://drive.google.com/file/d/1kohoQskuHhwFykV5ZyUz-cPdLFeCcRD_/view). It'll let CSpell extension use the custom dictionaries. It requires creating a wrapper config json file that points to the actual config file. My wrapper config file as a sample is, 
+
+![A sample of CSpell config file](/assets/cspell-sample-config-for-each-repo.png)
 
 ## Use CSpell in VSCode editor for everyday authoring
 
